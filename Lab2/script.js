@@ -2,8 +2,8 @@ var car1 = new Object();
 car1.color = "Red";
 car1.maxSpeed = 220;
 car1.driver = {
-    name: "Прізвище Ім'я",
-    category: "B",
+    name: "Mariia Zamkova",
+    category: "C",
     personalLimitations: "No driving at night"
 };
 car1.tuning = true;
@@ -13,7 +13,7 @@ var car2 = {
     color: "Blue",
     maxSpeed: 180,
     driver: {
-        name: "Прізвище Ім'я",
+        name: "Mariia Zamkova",
         category: "B",
         personalLimitations: null
     },
@@ -60,8 +60,8 @@ Truck.prototype.AssignDriver = function(name, nightDriving, experience) {
 var truck1 = new Truck("White", 5000, 80, "Volvo", "FH16");
 var truck2 = new Truck("Black", 4500, 85, "Scania", "R500");
 
-truck1.AssignDriver("Олексій Петров", true, 5);
-truck2.AssignDriver("Дмитро Сидоров", false, 10);
+truck1.AssignDriver("Олексій ", true, 5);
+truck2.AssignDriver("Дмитро ", false, 10);
 
 truck1.trip();
 truck2.trip();
