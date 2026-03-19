@@ -6,5 +6,5 @@
     console.log(speakWord + " " + name);
   };
 
-  window.helloSpeaker = helloSpeaker; // Експортуємо об'єкт у глобальну область [cite: 10]
+  window.helloSpeaker = helloSpeaker; 
 })(window);
