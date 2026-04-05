@@ -1,35 +1,14 @@
 <!DOCTYPE html>
-<html >
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title> Lab 4 - JS Бібліотеки</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 - JS</title>
 </head>
 <body>
-    <h1>Результати роботи бібліотеки сортування дивіться у консолі(F12)</h1>
+    <h1>Лабораторна робота №4</h1>
 
-    <script src="sortLib.js"></script>
-    <script>
-        // Функція для створення випадкового масиву
-        const createArray = (size) => Array.from({length: size}, () => Math.floor(Math.random() * 1000));
-
-        // 1. Нерозріджений масив (100 елементів)
-        const normalArray = createArray(100);
-        console.log("%c--- ТЕСТ 1: НЕРОЗРІДЖЕНИЙ МАСИВ ---", "color: blue; font-weight: bold");
-        SortLib.bubbleSort([...normalArray]);
-        SortLib.selectionSort([...normalArray]);
-        SortLib.insertionSort([...normalArray]);
-        SortLib.shellSort([...normalArray]);
-        SortLib.quickSort([...normalArray]);
-
-        // 2. Розріджений масив (100 елементів)
-        const sparseArray = createArray(100);
-        sparseArray[10] = undefined; // утворення розрідженості
-        sparseArray[50] = undefined;
-        sparseArray[99] = undefined;
-        
-        console.log("%c\n--- ТЕСТ 2: РОЗРІДЖЕНИЙ МАСИВ ---", "color: red; font-weight: bold");
-        SortLib.bubbleSort([...sparseArray], true);
-        SortLib.quickSort([...sparseArray], false); // демонструємо за спаданням
-    </script>
+    <script src="sortLibrary.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
