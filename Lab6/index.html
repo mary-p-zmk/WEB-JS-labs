@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 id="game-title">Lumen<span>Grid</span></h1>
+        
+        <div class="info">
+            <div class="info-block">
+                <p>Кроків</p>
+                <span id="moves-counter">0</span>
+            </div>
+            <div class="info-block">
+                <p>Мінімум</p>
+                <span id="min-moves">-</span>
+            </div>
+        </div>
+        
+        <div id="grid" class="grid"></div>
+        
+        <div class="controls">
+            <button id="btn-restart">Restart</button>
+            <button id="btn-new-game">New Game</button>
+        </div>
+        
+        <p id="win-message" class="hidden">СИСТЕМУ ОЧИЩЕНО!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
