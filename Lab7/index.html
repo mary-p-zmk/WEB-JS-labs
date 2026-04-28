@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Оптова база квітів</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .item-img { max-width: 200px; max-height: 200px; } 
+        .cursor-pointer { cursor: pointer; }
+    </style>
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <span class="navbar-brand">FlowerBase</span>
+        <div class="navbar-nav">
+            <a class="nav-link" href="index.html">Додому</a> 
+            <a class="nav-link cursor-pointer" onclick="loadCategories()">Каталог</a> 
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div id="main-content" class="bg-white p-4 shadow-sm rounded">
+        <div class="text-center py-5">
+            <h1>Вітаємо на Оптовій Базі Квітів</h1>
+            <p class="lead">Виберіть розділ у меню або натисніть кнопку нижче.</p>
+            <button class="btn btn-success btn-lg" onclick="loadCategories()">Перейти до каталогу</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
