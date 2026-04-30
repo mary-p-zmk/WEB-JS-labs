@@ -59,12 +59,15 @@ function renderItems(data) {
     data.items.forEach(item => {
         html += `
             <div class="col-md-6 mb-4">
-                <div class="d-flex border p-3 rounded align-items-center h-100">
-                    <img src="https://placehold.co/200x200?text=${item.shortname}" class="item-img me-3 rounded shadow-sm">
-                    <div>
-                        <h4 class="h5 mb-1">${item.name}</h4>
-                        <p class="text-muted small mb-2">${item.description}</p>
-                        <strong class="text-success">${item.price} грн</strong>
+                <div class="card h-100">
+                    <img src="${item.image}" 
+                         class="card-img-top" 
+                         alt="${item.name}" 
+                         style="width: 200px; height: 200px; object-fit: cover; margin: 0 auto;">
+                    <div class="card-body text-center">
+                        <h5>${item.name}</h5>
+                        <p class="small text-muted">${item.description}</p>
+                        <p><strong>${item.price} грн</strong></p>
                     </div>
                 </div>
             </div>`;
