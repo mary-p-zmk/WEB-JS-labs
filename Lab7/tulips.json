@@ -6,28 +6,28 @@
       "shortname": "antarctica",
       "description": "Великі, келихоподібні бутони чисто-білого кольору.",
       "price": 59.00,
-      "images": "Lab7/flover_base/tulips/antarctica.jpg" 
+      "image": "flover_base/tulips/antarctica.jpg" 
     },
     { "id": 202,
       "name": "Колумбус",
       "shortname": "сolumbus",
       "description": "Махрові, піоновидної форми з ніжно-рожевим забарвленням із білою облямівкою.",
       "price": 55.00,
-      "images": "Lab7/flover_base/tulips/сolumbus.jpg" 
+      "image": "flover_base/tulips/сolumbus.jpg" 
     },
     { "id": 203,
       "name": "Іль де Франс",
       "shortname": "ile de france",
       "description": "Класичний, яскраво-червоний сорт, келихоподібнї форми.",
       "price": 60.00,
-      "images": "Lab7/flover_base/tulips/ile_de_france.jpg" 
+      "image": "flover_base/tulips/ile_de_france.jpg" 
     },
     { "id": 204,
       "name": "Мері Джо",
       "shortname": "marie jo",
       "description": "Махровий сорт із густими, яскраво-жовтими пелюстками лимонного відтінку.",
       "price": 58.00,
-      "images": "Lab7/flover_base/tulips/marie_jo.jpg" 
+      "image": "flover_base/tulips/marie_jo.jpg" 
     }
   ]
 }
