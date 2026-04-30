@@ -54,26 +54,37 @@ function loadCategoryItems(shortname) {
 function renderItems(data) {
     const container = document.getElementById('main-content');
     
-    let html = `<h2 class="text-center mb-4">Категорія: ${data.category_name}</h2><div class="row">`;
+    // Додаємо заголовок категорії
+    let html = `
+        <h2 class="text-center mb-4">${data.category_name}</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">`;
 
     data.items.forEach(item => {
+        // Використовуємо шлях з поля item.image
+        // Якщо картинки немає в JSON, можна додати "заглушку"
+        const imagePath = item.image ? item.image : 'flover_base/default.jpg';
+
         html += `
-            <div class="col-md-6 mb-4">
-                <div class="card h-100">
-                    <img src="${item.image}" 
-                         class="card-img-top" 
-                         alt="${item.name}" 
-                         style="width: 200px; height: 200px; object-fit: cover; margin: 0 auto;">
-                    <div class="card-body text-center">
-                        <h5>${item.name}</h5>
-                        <p class="small text-muted">${item.description}</p>
-                        <p><strong>${item.price} грн</strong></p>
+            <div class="col">
+                <div class="card h-100 shadow-sm text-center">
+                    <div class="d-flex justify-content-center p-3">
+                        <img src="${imagePath}" 
+                             alt="${item.name}" 
+                             class="rounded"
+                             style="width: 200px; height: 200px; object-fit: cover;">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">${item.name}</h5>
+                        <p class="card-text text-muted small">${item.description}</p>
+                        <p class="h6 text-success">${item.price} грн</p>
                     </div>
                 </div>
             </div>`;
     });
 
-    html += '</div><div class="text-center mt-4"><button class="btn btn-secondary" onclick="loadCategories()">Назад до каталогу</button></div>';
+    html += '</div>';
+    html += '<div class="text-center mt-4"><button class="btn btn-secondary" onclick="loadCategories()">Назад до каталогу</button></div>';
+    
     container.innerHTML = html;
 }
 
