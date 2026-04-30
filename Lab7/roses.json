@@ -13,21 +13,21 @@
       "shortname": "peach avalanche",
       "description": "Махровий бутон ніжно-персикового кольору з кремовим відтінком.",
       "price": 52.00,
-      "images": "Lab7/flover_base/roses/peach_avalanche.jpg" 
+      "images": "flover_base/roses/peach_avalanche.jpg" 
     },
     { "id": 103,
       "name": "Мондіаль",
       "shortname": "mondial",
       "description": "Преміальні великобутонні троянди, ніжно білого або кремового кольору.",
       "price": 57.00,
-      "images": "Lab7/flover_base/roses/mondial.jpg" 
+      "images": "flover_base/roses/mondial.jpg" 
     },
     { "id": 104,
       "name": "Міс Піггі",
       "shortname": "miss piggy",
       "description": "Келихоподібні махрові бутони, рожеві ззовні та ніжно-персикові у центрі.",
       "price": 55.00,
-      "images": "Lab7/flover_base/roses/miss_piggy.jpg" 
+      "images": "flover_base/roses/miss_piggy.jpg" 
     }
   ]
 }
