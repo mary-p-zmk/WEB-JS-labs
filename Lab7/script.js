@@ -60,8 +60,6 @@ function renderItems(data) {
         <div class="row row-cols-1 row-cols-md-3 g-4">`;
 
     data.items.forEach(item => {
-        // Використовуємо шлях з поля item.image
-        // Якщо картинки немає в JSON, можна додати "заглушку"
         const imagePath = item.image ? item.image : 'flover_base/default.jpg';
 
         html += `
