@@ -6,28 +6,28 @@
       "shortname": "amistad",
       "description": "Махрові, ніжно-рожеві квіти з кремовим відтінком та приємним ароматом.",
       "price": 65.00,
-      "images": "flover_base/lilies/amistad.jpg" 
+      "images": "Lab7/flover_base/lilies/amistad.jpg" 
     },
     { "id": 302,
       "name": "Мон Блан",
       "shortname": "mont blanc",
       "description": "Чисто-білі пелюстки, можуть мати ледь помітну зеленувату або кремову основу.",
       "price": 62.00,
-      "images": "flover_base/lilies/mont_blanc.jpg" 
+      "images": "Lab7/flover_base/lilies/mont_blanc.jpg" 
     },
     { "id": 303,
       "name": "Оранж Тон",
       "shortname": "orange ton",
       "description": "Чашоподібні бутони яскравого, насичено-помаранчевого кольору .",
       "price": 66.00,
-      "images": "flover_base/lilies/orange_ton.jpg" 
+      "images": "Lab7/flover_base/lilies/orange_ton.jpg" 
     },
     { "id": 304,
       "name": "Коктейль Твінс",
       "shortname": "coctail twins",
       "description": "Ммахровий бутон з багатошаровими червоно-жовтогарячими квітками з молочно-білою смугою по центру.",
       "price": 67.00,
-      "images": "flover_base/lilies/coctail_twins.jpg" 
+      "images": "Lab7/flover_base/lilies/coctail_twins.jpg" 
     }
   ]
 }
