@@ -3,57 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторна робота №8-js</title>
+    <title>Лабораторна робота №8</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">WebDev Lab8</div>
-        <button class="hamburger" id="hamburger" aria-label="Меню">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#">Головна</a></li>
-            <li><a href="#">Блог</a></li>
-            <li><a href="#">Контакти</a></li>
+    <header class="navbar">
+        <div class="logo">LAB.<span>JS</span></div>
+        
+        <!-- Кнопка Гамбургер (Medium) -->
+        <button class="hamburger" id="hamburger-btn">☰</button>
+
+        <!-- Меню з піктограмами (Large) -->
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="#"><span class="icon">🏠</span><span class="text">Головна</span></a></li>
+            <li><a href="#"><span class="icon">🖼️</span><span class="text">Галерея</span></a></li>
+            <li><a href="#"><span class="icon">🛠️</span><span class="text">Послуги</span></a></li>
+            <li><a href="#"><span class="icon">✉️</span><span class="text">Контакти</span></a></li>
         </ul>
-    </nav>
+    </header>
 
     <main>
-        <section class="carousel-section">
-            <div class="carousel-container">
-                <div class="carousel-slide" id="carousel-slide">
-                    <img src="images/slide1.jpg" alt="Slide 1">
-                    <img src="images/slide2.jpg" alt="Slide 2">
-                    <img src="images/slide3.jpg" alt="Slide 3">
-                    <img src="images/slide4.jpg" alt="Slide 4">
+        <!-- Карусель -->
+        <section class="carousel">
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="track">
+                    <div class="slide"><img src="images/slide1.jpg" alt="1"></div>
+                    <div class="slide"><img src="images/slide2.jpg" alt="2"></div>
+                    <div class="slide"><img src="images/slide3.jpg" alt="3"></div>
+                    <div class="slide"><img src="images/slide4.jpg" alt="4"></div>
                 </div>
-                
-                <button class="carousel-btn prev" id="prevBtn">❮</button>
-                <button class="carousel-btn next" id="nextBtn">❯</button>
-
-                <div class="carousel-indicators" id="indicators">
-                    </div>
             </div>
+            
+            <button class="arrow prev" id="btn-prev">❮</button>
+            <button class="arrow next" id="btn-next">❯</button>
+
+            <div class="indicators" id="dots"></div>
         </section>
 
-        <section class="content-section">
-            <div class="large-devices-only">
-                <h2>Контент для Large пристроїв (>=768px)</h2>
-                <div class="img-grid">
-                    <img src="images/large1.jpg" alt="Large device view 1">
-                    <img src="images/large2.jpg" alt="Large device view 2">
+        <!-- Адаптивні зображення -->
+        <section class="images-box">
+            <!-- Тільки для Large (>=768px) -->
+            <div class="large-content">
+                <h2>Контент для Large-пристроїв</h2>
+                <div class="grid">
+                    <img src="images/desktop1.jpg" alt="Desktop">
+                    <img src="images/desktop2.jpg" alt="Desktop">
+                    <img src="images/desktop3.jpg" alt="Desktop">
                 </div>
             </div>
 
-            <div class="medium-devices-only">
-                <h2>Контент для Medium пристроїв (<768px)</h2>
-                <div class="img-grid">
-                    <img src="images/medium1.jpg" alt="Medium device view 1">
-                    <img src="images/medium2.jpg" alt="Medium device view 2">
+            <!-- Тільки для Medium (<768px) -->
+            <div class="medium-content">
+                <h2>Контент для Medium-пристроїв</h2>
+                <div class="stack">
+                    <img src="images/mobile1.jpg" alt="Mobile">
+                    <img src="images/mobile2.jpg" alt="Mobile">
                 </div>
             </div>
         </section>
