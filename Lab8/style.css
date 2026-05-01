@@ -1,70 +1,56 @@
-/* Базові налаштування */
+:root {
+    --primary: #2563eb;
+    --bg: #f8fafc;
+    --text: #1e293b;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: #f4f4f4; }
+body { font-family: sans-serif; background: var(--bg); color: var(--text); }
 
-/* Навігація */
-.navbar {
-    display: flex; justify-content: space-between; align-items: center;
-    background: #2c3e50; color: white; padding: 1rem 5%;
-    position: sticky; top: 0; z-index: 1000;
-}
+/* --- Навігація --- */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+.logo { font-weight: bold; font-size: 1.5rem; }
+.logo span { color: var(--primary); }
 
-.nav-links { display: flex; list-style: none; }
-.nav-links li { margin-left: 20px; }
-.nav-links a { color: white; text-decoration: none; font-weight: bold; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { text-decoration: none; color: var(--text); display: flex; flex-direction: column; align-items: center; }
+.nav-links .icon { font-size: 1.2rem; margin-bottom: 2px; }
 
-/* Гамбургер меню */
-.hamburger {
-    display: none; cursor: pointer; background: none; border: none;
-    flex-direction: column; justify-content: space-between; width: 30px; height: 21px;
-}
-.hamburger span { height: 3px; width: 100%; background: white; border-radius: 10px; transition: 0.3s; }
+.hamburger { display: none; background: none; border: none; font-size: 2rem; cursor: pointer; }
 
-/* Адаптивність  */
-@media (max-width: 767px) { /* Medium пристрої */
-    .hamburger { display: flex; }
+/* Адаптивність Навігації та Контенту */
+@media (max-width: 767px) {
+    .hamburger { display: block; }
     .nav-links {
         display: none; position: absolute; top: 100%; left: 0; width: 100%;
-        background: #34495e; flex-direction: column; text-align: center;
-        overflow: hidden; max-height: 0; transition: max-height 0.5s ease-in-out;
+        background: #fff; flex-direction: column; padding: 20px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        transform: translateY(-20px); opacity: 0; transition: 0.4s;
     }
-    .nav-links.active { display: flex; max-height: 300px; }
-    .nav-links li { padding: 15px 0; margin: 0; border-bottom: 1px solid #2c3e50; }
+    .nav-links.active { display: flex; transform: translateY(0); opacity: 1; }
+    .nav-links a { flex-direction: row; gap: 10px; }
     
-    .large-devices-only { display: none; }
+    .large-content { display: none; } /* Приховати Large */
 }
 
-@media (min-width: 768px) { /* Large пристрої */
-    .medium-devices-only { display: none; }
+@media (min-width: 768px) {
+    .medium-content { display: none; } /* Приховати Medium */
 }
 
-/* Карусель  */
-.carousel-section { padding: 20px 0; }
-.carousel-container {
-    position: relative; max-width: 800px; margin: auto;
-    overflow: hidden; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-.carousel-slide { display: flex; transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1); }
-.carousel-slide img { width: 100%; display: block; }
+/* --- Карусель --- */
+.carousel { position: relative; max-width: 900px; margin: 40px auto; overflow: hidden; border-radius: 15px; }
+.carousel-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.slide { min-width: 100%; }
+.slide img { width: 100%; height: 400px; object-fit: cover; }
 
-.carousel-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(0,0,0,0.5); color: white; border: none;
-    padding: 15px; cursor: pointer; font-size: 1.2rem;
-}
-.prev { left: 0; border-radius: 0 5px 5px 0; }
-.next { right: 0; border-radius: 5px 0 0 5px; }
+.arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.7); border: none; padding: 15px; cursor: pointer; border-radius: 50%; }
+.prev { left: 10px; } .next { right: 10px; }
 
-.carousel-indicators {
-    position: absolute; bottom: 15px; width: 100%;
-    display: flex; justify-content: center; gap: 8px;
-}
-.dot {
-    width: 12px; height: 12px; background: rgba(255,255,255,0.5);
-    border-radius: 50%; cursor: pointer;
-}
-.dot.active { background: white; transform: scale(1.2); }
+.indicators { display: flex; justify-content: center; gap: 10px; margin-top: 15px; }
+.dot { width: 12px; height: 12px; border: 2px solid var(--primary); border-radius: 50%; cursor: pointer; }
+.dot.active { background: var(--primary); }
 
-/* Сітка зображень */
-.img-grid { display: flex; gap: 15px; justify-content: center; padding: 20px; }
-.img-grid img { width: 300px; height: 200px; object-fit: cover; border-radius: 8px; }
+/* Сітки для зображень */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 20px; }
+.stack { display: flex; flex-direction: column; gap: 15px; padding: 20px; }
+.images-box img { width: 100%; border-radius: 10px; }
