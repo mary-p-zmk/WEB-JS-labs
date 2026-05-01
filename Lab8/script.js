@@ -1,74 +1,54 @@
-(function() {
-    "use strict";
+document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. Гамбургер меню ---
+    const hamBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
 
-    // --- Логіка меню Гамбургер ---
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        // Анімація іконки гамбургера
-        hamburger.classList.toggle('toggle');
+    hamBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active'); // Анімація появи через CSS
     });
 
-    // --- Логіка Каруселі ---
-    const slideContainer = document.getElementById('carousel-slide');
-    const slides = document.querySelectorAll('.carousel-slide img');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const indicatorsContainer = document.getElementById('indicators');
+    // --- 2. Карусель ---
+    const track = document.getElementById('track');
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('dots');
+    const nextBtn = document.getElementById('btn-next');
+    const prevBtn = document.getElementById('btn-prev');
 
-    let currentIndex = 0;
+    let currentSlide = 0;
     const totalSlides = slides.length;
-    const intervalTime = 5000; // 5 секунд (автоматична зміна)
 
     // Створення індикаторів
     slides.forEach((_, i) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
-        indicatorsContainer.appendChild(dot);
+        if(i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => moveCarousel(i));
+        dotsContainer.appendChild(dot);
     });
 
     const dots = document.querySelectorAll('.dot');
 
-    function updateUI() {
-        slideContainer.style.transform = `translateX(${-currentIndex * 100}%)`;
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentIndex].classList.add('active');
+    function moveCarousel(index) {
+        currentSlide = index;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach(d => d.classList.remove('active'));
+        dots[currentSlide].classList.add('active');
     }
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateUI();
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateUI();
-    }
-
-    function goToSlide(index) {
-        currentIndex = index;
-        updateUI();
-    }
-
-    // Слухачі подій
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-
-    // Автоматична зміна слайдів (Завдання 1.2.3.2)
-    let autoSlide = setInterval(nextSlide, intervalTime);
-
-    // Зупинка таймера при взаємодії користувача
-    const resetTimer = () => {
-        clearInterval(autoSlide);
-        autoSlide = setInterval(nextSlide, intervalTime);
-    };
-
-    [prevBtn, nextBtn, indicatorsContainer].forEach(el => {
-        el.addEventListener('click', resetTimer);
+    // Кнопки
+    nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        moveCarousel(currentSlide);
     });
 
-})();
+    prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        moveCarousel(currentSlide);
+    });
+
+    // Автоматична зміна
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        moveCarousel(currentSlide);
+    }, 5000);
+});
