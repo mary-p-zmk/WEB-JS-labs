@@ -1,0 +1,70 @@
+/* Базові налаштування */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: #f4f4f4; }
+
+/* Навігація */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #2c3e50; color: white; padding: 1rem 5%;
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: bold; }
+
+/* Гамбургер меню */
+.hamburger {
+    display: none; cursor: pointer; background: none; border: none;
+    flex-direction: column; justify-content: space-between; width: 30px; height: 21px;
+}
+.hamburger span { height: 3px; width: 100%; background: white; border-radius: 10px; transition: 0.3s; }
+
+/* Адаптивність  */
+@media (max-width: 767px) { /* Medium пристрої */
+    .hamburger { display: flex; }
+    .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; width: 100%;
+        background: #34495e; flex-direction: column; text-align: center;
+        overflow: hidden; max-height: 0; transition: max-height 0.5s ease-in-out;
+    }
+    .nav-links.active { display: flex; max-height: 300px; }
+    .nav-links li { padding: 15px 0; margin: 0; border-bottom: 1px solid #2c3e50; }
+    
+    .large-devices-only { display: none; }
+}
+
+@media (min-width: 768px) { /* Large пристрої */
+    .medium-devices-only { display: none; }
+}
+
+/* Карусель  */
+.carousel-section { padding: 20px 0; }
+.carousel-container {
+    position: relative; max-width: 800px; margin: auto;
+    overflow: hidden; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.carousel-slide { display: flex; transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1); }
+.carousel-slide img { width: 100%; display: block; }
+
+.carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.5); color: white; border: none;
+    padding: 15px; cursor: pointer; font-size: 1.2rem;
+}
+.prev { left: 0; border-radius: 0 5px 5px 0; }
+.next { right: 0; border-radius: 5px 0 0 5px; }
+
+.carousel-indicators {
+    position: absolute; bottom: 15px; width: 100%;
+    display: flex; justify-content: center; gap: 8px;
+}
+.dot {
+    width: 12px; height: 12px; background: rgba(255,255,255,0.5);
+    border-radius: 50%; cursor: pointer;
+}
+.dot.active { background: white; transform: scale(1.2); }
+
+/* Сітка зображень */
+.img-grid { display: flex; gap: 15px; justify-content: center; padding: 20px; }
+.img-grid img { width: 300px; height: 200px; object-fit: cover; border-radius: 8px; }
