@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторна робота №8</title>
+    <title>Лабораторна робота №8 | JavaScript UI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Навігація (Завдання 1.2.3.1) -->
     <header class="navbar">
-        <div class="logo">LAB.<span>JS</span></div>
+        <div class="logo">CREATIVE<span>LAB</span></div>
         
-        <!-- Кнопка Гамбургер (Medium) -->
         <button class="hamburger" id="hamburger-btn">☰</button>
 
-        <!-- Меню з піктограмами (Large) -->
         <ul class="nav-links" id="nav-menu">
             <li><a href="#"><span class="icon">🏠</span><span class="text">Головна</span></a></li>
-            <li><a href="#"><span class="icon">🖼️</span><span class="text">Галерея</span></a></li>
-            <li><a href="#"><span class="icon">🛠️</span><span class="text">Послуги</span></a></li>
-            <li><a href="#"><span class="icon">✉️</span><span class="text">Контакти</span></a></li>
+            <li><a href="#"><span class="icon">💼</span><span class="text">Портфоліо</span></a></li>
+            <li><a href="#"><span class="icon">🚀</span><span class="text">Послуги</span></a></li>
+            <li><a href="#"><span class="icon">📞</span><span class="text">Контакти</span></a></li>
         </ul>
     </header>
 
     <main>
-        <!-- Карусель -->
+        <!-- Карусель (Завдання 1.2.3.2) -->
         <section class="carousel">
             <div class="carousel-viewport">
                 <div class="carousel-track" id="track">
-                    <div class="slide"><img src="images/slide1.jpg" alt="1"></div>
-                    <div class="slide"><img src="images/slide2.jpg" alt="2"></div>
-                    <div class="slide"><img src="images/slide3.jpg" alt="3"></div>
-                    <div class="slide"><img src="images/slide4.jpg" alt="4"></div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Code">
+                        <div class="caption">Сучасне програмування</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" alt="Tech">
+                        <div class="caption">Цифрові рішення</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1581291518066-105151520110?auto=format&fit=crop&w=1200&q=80" alt="Design">
+                        <div class="caption">Креативний дизайн</div>
+                    </div>
                 </div>
             </div>
             
@@ -41,24 +48,24 @@
             <div class="indicators" id="dots"></div>
         </section>
 
-        <!-- Адаптивні зображення -->
-        <section class="images-box">
-            <!-- Тільки для Large (>=768px) -->
-            <div class="large-content">
-                <h2>Контент для Large-пристроїв</h2>
-                <div class="grid">
-                    <img src="images/desktop1.jpg" alt="Desktop">
-                    <img src="images/desktop2.jpg" alt="Desktop">
-                    <img src="images/desktop3.jpg" alt="Desktop">
+        <!-- Адаптивні зображення (Завдання 1.2.3.3 & 1.2.3.4) -->
+        <section class="content-container">
+            <!-- Блок для Large (>=768px) -->
+            <div class="large-only">
+                <h2 class="section-title">Ексклюзивно для десктопів (Large)</h2>
+                <div class="image-grid">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&h=300" alt="Workplace">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=400&h=300" alt="UI Design">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&h=300" alt="Meeting">
                 </div>
             </div>
 
-            <!-- Тільки для Medium (<768px) -->
-            <div class="medium-content">
-                <h2>Контент для Medium-пристроїв</h2>
-                <div class="stack">
-                    <img src="images/mobile1.jpg" alt="Mobile">
-                    <img src="images/mobile2.jpg" alt="Mobile">
+            <!-- Блок для Medium (<768px) -->
+            <div class="medium-only">
+                <h2 class="section-title">Мобільна версія (Medium)</h2>
+                <div class="image-stack">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&h=400" alt="Phone 1">
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=600&h=400" alt="Phone 2">
                 </div>
             </div>
         </section>
