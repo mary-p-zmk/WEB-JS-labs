@@ -8,66 +8,76 @@
 </head>
 <body>
 
-    <!-- Навігація (Завдання 1.2.3.1) -->
+    <!-- Навігаційне меню  -->
     <header class="navbar">
-        <div class="logo">CREATIVE<span>LAB</span></div>
+        <div class="logo">WEB<span>LAB8</span></div>
         
+        <!-- Кнопка Гамбургер для Medium-пристроїв -->
         <button class="hamburger" id="hamburger-btn">☰</button>
 
+        <!-- Набір піктограм з написами для Large-пристроїв -->
         <ul class="nav-links" id="nav-menu">
             <li><a href="#"><span class="icon">🏠</span><span class="text">Головна</span></a></li>
-            <li><a href="#"><span class="icon">💼</span><span class="text">Портфоліо</span></a></li>
-            <li><a href="#"><span class="icon">🚀</span><span class="text">Послуги</span></a></li>
-            <li><a href="#"><span class="icon">📞</span><span class="text">Контакти</span></a></li>
+            <li><a href="#"><span class="icon">🔍</span><span class="text">Пошук</span></a></li>
+            <li><a href="#"><span class="icon">⭐</span><span class="text">Вибране</span></a></li>
+            <li><a href="#"><span class="icon">⚙️</span><span class="text">Налаштування</span></a></li>
+            <li><a href="#"><span class="icon">👤</span><span class="text">Профіль</span></a></li>
         </ul>
     </header>
 
     <main>
-        <!-- Карусель (Завдання 1.2.3.2) -->
+        <!-- Елемент «карусель»  -->
         <section class="carousel">
             <div class="carousel-viewport">
                 <div class="carousel-track" id="track">
+                    <!-- Слайд 1 -->
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Code">
-                        <div class="caption">Сучасне програмування</div>
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="Technology">
+                        <div class="caption">Інноваційні технології</div>
                     </div>
+                    <!-- Слайд 2 -->
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" alt="Tech">
-                        <div class="caption">Цифрові рішення</div>
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200" alt="Coding">
+                        <div class="caption">Чистий код</div>
                     </div>
+                    <!-- Слайд 3 -->
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1581291518066-105151520110?auto=format&fit=crop&w=1200&q=80" alt="Design">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200" alt="Design">
                         <div class="caption">Креативний дизайн</div>
                     </div>
                 </div>
             </div>
             
+            <!-- Кнопки-стрілки для ручного перемикання -->
             <button class="arrow prev" id="btn-prev">❮</button>
             <button class="arrow next" id="btn-next">❯</button>
 
+            <!-- Індикатори поточного слайду -->
             <div class="indicators" id="dots"></div>
         </section>
 
-        <!-- Адаптивні зображення (Завдання 1.2.3.3 & 1.2.3.4) -->
+        <!-- Адаптивні блоки зображень -->
         <section class="content-container">
-            <!-- Блок для Large (>=768px) -->
+            
+            <!-- Зображення лише для Large-пристроїв  -->
             <div class="large-only">
-                <h2 class="section-title">Ексклюзивно для десктопів (Large)</h2>
+                <h2 class="section-title">Контент для великих екранів (Large)</h2>
                 <div class="image-grid">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&h=300" alt="Workplace">
-                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=400&h=300" alt="UI Design">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&h=300" alt="Meeting">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=350&fit=crop" alt="Data 1">
+                    <img src="https://images.unsplash.com/photo-1504868584819-f8e90526354a?w=500&h=350&fit=crop" alt="Data 2">
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?w=500&h=350&fit=crop" alt="Data 3">
                 </div>
             </div>
 
-            <!-- Блок для Medium (<768px) -->
+            <!-- Зображення лише для Medium-пристроїв  -->
             <div class="medium-only">
-                <h2 class="section-title">Мобільна версія (Medium)</h2>
+                <h2 class="section-title">Мобільний перегляд (Medium)</h2>
                 <div class="image-stack">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&h=400" alt="Phone 1">
-                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=600&h=400" alt="Phone 2">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" alt="Mobile 1">
+                    <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?w=600&h=400&fit=crop" alt="Mobile 2">
                 </div>
             </div>
+
         </section>
     </main>
 
