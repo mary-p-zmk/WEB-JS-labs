@@ -5,21 +5,28 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+body { font-family: 'Segoe UI', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
 
 /* Навігація */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: white; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+.navbar { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 1rem 5%; background: white; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); 
+    position: sticky; top: 0; z-index: 1000; 
+}
 .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: 1px; }
 .logo span { color: var(--primary); }
 
 .nav-links { display: flex; list-style: none; gap: 30px; }
-.nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; display: flex; flex-direction: column; align-items: center; transition: 0.3s; }
+.nav-links a { 
+    text-decoration: none; color: var(--dark); font-weight: 600; 
+    display: flex; flex-direction: column; align-items: center; transition: 0.3s; 
+}
 .nav-links a:hover { color: var(--primary); }
 .nav-links .icon { font-size: 1.3rem; }
 
 .hamburger { display: none; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--dark); }
 
-/* Адаптивність */
+/* Адаптивність (Умови 1.2.2) */
 @media (max-width: 767px) {
     .hamburger { display: block; }
     .nav-links {
@@ -38,20 +45,13 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     .medium-only { display: none; } 
 }
 
-/* Карусель  */
+/* Карусель (Умова 1.2.3.2) */
 .carousel { position: relative; max-width: 1000px; margin: 30px auto; overflow: hidden; border-radius: 20px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
 .carousel-track { display: flex; transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1); }
-.slide { min-width: 100%; position: relative; }
-.slide img { width: 100%; height: 500px; object-fit: cover; }
+.slide { min-width: 100%; }
+.slide img { width: 100%; height: 500px; object-fit: cover; display: block; }
 
-.caption {
-    position: absolute; bottom: 30px; left: 30px;
-    background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);
-    padding: 15px 25px; border-radius: 12px; color: white;
-    font-size: 1.5rem; font-weight: bold; border: 1px solid rgba(255,255,255,0.3);
-}
-
-.arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; transition: 0.3s; font-size: 1.2rem; }
+.arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; transition: 0.3s; font-size: 1.2rem; z-index: 10; }
 .arrow:hover { background: var(--primary); color: white; }
 .prev { left: 20px; } .next { right: 20px; }
 
@@ -59,10 +59,9 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
 .dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--primary); cursor: pointer; transition: 0.3s; }
 .dot.active { background: var(--primary); transform: scale(1.3); }
 
-/* Контентні секції */
+/* Контентні секції (Умови 1.2.3.3 та 1.2.3.4) */
 .content-container { padding: 40px 5%; }
 .section-title { text-align: center; margin-bottom: 30px; font-size: 2rem; color: var(--dark); }
 .image-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .image-stack { display: flex; flex-direction: column; gap: 20px; }
 .content-container img { width: 100%; border-radius: 15px; transition: 0.4s; }
-.content-container img:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
