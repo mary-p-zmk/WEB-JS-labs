@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let autoPlay;
 
     // Створення крапок
+    dotsContainer.innerHTML = '';
     slides.forEach((_, i) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
